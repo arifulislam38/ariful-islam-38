@@ -78,7 +78,7 @@ const Navbar = () => {
                   whileTap={{scale:0.8}}
                   className='w-6 ml-3'
               ><DribbbleIcon /></motion.a>
-              <button onClick={()=>setMode(mode=== ("light"||"")? "dark":"light")} className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode==="light"? "bg-dark text-light": "bg-light text-dark"} `}>
+                  <button onClick={() =>setMode(mode === ("light" || null) ? "dark" : "light")} className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode===("light"||null)? "bg-dark text-light": "bg-light text-dark"} `}>
                   {
                       mode === "dark" ?
                           <MoonIcon className={"fill-dark"} />
@@ -128,7 +128,7 @@ const Navbar = () => {
                             whileTap={{scale:0.8}}
                             className='w-6 ml-3 sm:mx-1'
                         ><DribbbleIcon /></motion.a>
-                        <button onClick={()=>setMode(mode=== ("light"||"")? "dark":"light")} className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode==="light"? "bg-dark text-light": "bg-light text-dark"} `}>
+                          <button onClick={() => { setMode(mode === ("light" || null) ? "dark" : "light"); handleClick()}} className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode===("light"||null)? "bg-dark text-light": "bg-light text-dark"} `}>
                             {
                                 mode === "dark" ?
                                     <MoonIcon className={"fill-dark"} />
