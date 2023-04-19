@@ -19,11 +19,13 @@ const FeaturedArticle = ({img,title,time,summary,link}) => {
             <Link href={link} target='_blank' className='w-full cursor-pointer overflow-hidden rounded-lg inline-block'>
                 <FramerImage src={img} alt={title} className='w-full h-auto'
                     whileHover={{ scale: 1.05 }}
-                    transition={{duration:0.2}}
+                    transition={{ duration: 0.2 }}
+                    priority
+                    sizes='(max-width:768px) 100vw, (max-width:1200px) 50vw, 50vw'
                 />
             </Link>
             <Link href={link} target='_blank'>
-                <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline'>{title}</h2>
+                <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg'>{title}</h2>
                 <p className='text-sm mb-2'>{summary}</p>
                 <span className='text-primary dark:text-primaryDark font-semibold'>{time}</span>
             </Link>
@@ -33,7 +35,7 @@ const FeaturedArticle = ({img,title,time,summary,link}) => {
 
 const Article = ({img,title,date,link}) => {
     return (
-        <motion.li className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light dark:bg-dark text-dark dark:text-light first:mt-0 border border-solid border-dark dark:border-light border-r-4 border-b-4'
+        <motion.li className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light dark:bg-dark text-dark dark:text-light first:mt-0 border border-solid border-dark dark:border-light border-r-4 border-b-4 sm:flex-col'
             initial={{ y: 200 }}
             whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
             viewport={{once:true}}
@@ -43,7 +45,7 @@ const Article = ({img,title,date,link}) => {
                 img={img}
                 link={link}
             />
-            <span className='text-primary dark:text-primaryDark font-semibold pl-4'>{date}</span>
+            <span className='text-primary dark:text-primaryDark font-semibold pl-4 sm:pl-0 sm:self-start xs:text-sm'>{date}</span>
         </motion.li>
     )
 }
@@ -68,7 +70,7 @@ const MovingImage = ({ title, img, link }) => {
             onMouseLeave={handleMouseLeave}
         >
             <h2 className='capitalize text-xl font-semibold hover:underline'>{title}</h2>
-            <FramerImage ref={imageRef} src={img} alt={title} className='w-96 h-auto hidden absolute rounded-lg z-10'
+            <FramerImage ref={imageRef} src={img} alt={title} className='w-96 h-auto hidden absolute rounded-lg z-10 md:!hidden'
                 style={{ x: x, y: y }}
                 initial={{opacity:0}}
                 whileInView={{ opacity:1, transition:{duration:0.2}}}
@@ -85,8 +87,8 @@ const articles = () => {
         </Head>
         <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
               <Layout className='pt-16'>
-                  <AnimatedText text="Words Can Change The World!" className='mb-16'/>
-                  <ul className='grid grid-cols-2 gap-16'>
+                  <AnimatedText text="Words Can Change The World!" className='!text-7xl lg:!text-6xl sm:!text-5xl xs:!text-4xl mb-16 sm:mb-8'/>
+                  <ul className='grid grid-cols-2 gap-16 md:grid-cols-1 lg:gap-8 md:gap-y-16'>
                       <FeaturedArticle
                           img={article1}
                           title={"Build A Custom Pagination Component In Reactjs From Scratch"}
