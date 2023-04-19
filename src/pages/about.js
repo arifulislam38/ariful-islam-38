@@ -3,6 +3,7 @@ import Education from '@/components/Education';
 import Experience from '@/components/Experience';
 import Layout from '@/components/Layout';
 import Skills from '@/components/Skills';
+import TransitionEffect from '@/components/TransitionEffect';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -39,6 +40,7 @@ const about = () => {
                 <title>Ariful islam | About page</title>
                 <meta name='description' content='my content'/>
             </Head>
+            <TransitionEffect/>
             <main className='flex w-full flex-col items-center justify-center dark:text-light'>
                 <Layout className='pt-16'>
                     <AnimatedText text="Passion Fuels Purpose!" className='!text-7xl lg:!text-6xl sm:!text-5xl xs:!text-4xl mb-16 sm:mb-8' />

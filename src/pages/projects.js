@@ -1,6 +1,7 @@
 import AnimatedText from '@/components/AnimatedText'
 import { GithubIcon } from '@/components/Icons'
 import Layout from '@/components/Layout'
+import TransitionEffect from '@/components/TransitionEffect'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -69,6 +70,7 @@ const projects = () => {
         <title>Ariful islam | Projects page</title>
         <meta name='description' content='my content'/>
       </Head>
+      <TransitionEffect/>
       <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText text="Imagination Trumps Knowledge!" className='!text-7xl lg:!text-6xl sm:!text-5xl xs:!text-4xl mb-16 sm:mb-8'/>
